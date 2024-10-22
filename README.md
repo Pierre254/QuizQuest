@@ -36,33 +36,24 @@ To set up QuizQuest locally:
 
 Clone the repository:
 
-bash
-
 Copy
 git clone https://github.com/Pierre254/QuizQuest.git
+
 cd QuizQuest
 Create a virtual environment:
-
-bash
 
 Copy
 python3 -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate
 Install dependencies:
 
-bash
-
 Copy
 pip install -r requirements.txt
 Set up the database:
 
-bash
-
 Copy
 flask db upgrade
 Run the application:
-
-bash
 
 Copy
 flask run
