@@ -31,15 +31,21 @@ Version Control:
 
 Git
 
+
 Installation
 To set up QuizQuest locally:
 
+
 Clone the repository:
 
+
 Copy
+
 git clone https://github.com/Pierre254/QuizQuest.git
 
+
 cd QuizQuest
+
 Create a virtual environment:
 
 Copy
