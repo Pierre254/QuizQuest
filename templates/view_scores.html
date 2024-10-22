@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}View Scores{% endblock %}
+
+{% block content %}
+    <h2>Your Scores</h2>
+    <ul>
+        {% for score in scores %}
+            <li>Quiz ID: {{ score.quiz_id }} - Score: {{ score.score }}</li>
+        {% else %}
+            <li>No scores found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+<div class="pagination">
+    {% if scores.has_prev %}
+        <a href="{{ url_for('view_scores', page=scores.prev_num) }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ scores.page }} of {{ scores.pages }}</span>
+
+    {% if scores.has_next %}
+        <a href="{{ url_for('view_scores', page=scores.next_num) }}">Next</a>
+    {% endif %}
+</div>

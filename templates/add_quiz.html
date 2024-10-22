@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="{{ url_for('static', filename='js/quiz_form.js') }}"></script>
+
+<div class="container mt-5">
+    <h1 class="text-center">Add a New Quiz</h1>
+
+    <form method="POST" action="{{ url_for('add_quiz') }}" class="border p-4 rounded shadow">
+        {{ form.hidden_tag() }}  <!-- CSRF token for the main form -->
+
+        <div class="form-group mb-3">
+            {{ form.title.label(class='font-weight-bold') }}
+            {{ form.title(class='form-control', placeholder='Enter quiz title') }}
+        </div>
+
+        <div class="form-group mb-4">
+            {{ form.description.label(class='font-weight-bold') }}
+            {{ form.description(class='form-control', placeholder='Enter quiz description') }}
+        </div>
+
+        <!-- Container for dynamically added questions -->
+        <div id="questions-list" class="mb-4">
+            <!-- Questions will be dynamically added here -->
+        </div>
+
+        <!-- Button to dynamically add a question -->
+        <button id="add-question" class="btn btn-secondary mb-3" type="button">Add Question</button>
+
+        <!-- Submit button for adding the quiz -->
+        <button type="submit" class="btn btn-primary">Add Quiz</button>
+    </form>
+</div>
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem; /* Add bottom margin for spacing */
+    }
+
+    .btn {
+        margin-top: 1rem; /* Add top margin to buttons for spacing */
+    }
+</style>
+
+{% endblock %}
